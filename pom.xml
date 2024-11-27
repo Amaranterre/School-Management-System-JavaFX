@@ -16,6 +16,24 @@
     </properties>
 
     <dependencies>
+    	<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-controls -->
+    	<dependency>
+    		<groupId>org.openjfx</groupId>
+    		<artifactId>javafx-controls</artifactId>
+    		<version>11.0.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
+		<dependency>
+		    <groupId>org.openjfx</groupId>
+		    <artifactId>javafx-base</artifactId>
+		    <version>11.0.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+		<dependency>
+		    <groupId>org.openjfx</groupId>
+		    <artifactId>javafx-fxml</artifactId>
+		    <version>11.0.2</version>
+		</dependency>
         <!-- https://mvnrepository.com/artifact/org.jfxtras/jmetro -->
         <dependency>
             <groupId>org.jfxtras</groupId>
@@ -36,7 +54,12 @@
             <artifactId>fontawesomefx-fontawesome</artifactId>
             <version>4.7.0-9.1.2</version>
         </dependency>
-
+		
+		<dependency>
+    		<groupId>com.opencsv</groupId>
+    		<artifactId>opencsv</artifactId>
+    		<version>5.7.1</version>
+		</dependency>
 
 
 
@@ -44,6 +67,7 @@
 
 
     <build>
+    	<sourceDirectory>src/main/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -63,7 +87,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>it.saimao.hellohom/it.saimao.hellohom.HelloApplication</mainClass>
+                            <mainClass>home.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>

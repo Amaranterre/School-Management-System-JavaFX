@@ -1,6 +1,5 @@
 package home.controllers;
 
-import home.model.StudentsModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,40 +10,60 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import home.model.UserModel;
 
 public class StudentsController implements Initializable {
 
     @FXML
-    private TableView<StudentsModel> tbData;
-    @FXML
-    public TableColumn<StudentsModel, Integer> studentId;
+    private TableView<UserModel> tbData;
 
     @FXML
-    public TableColumn<StudentsModel, String> firstName;
+    private TableColumn<UserModel, Integer> studentId;
 
     @FXML
-    public TableColumn<StudentsModel, String> lastName;
+    private TableColumn<UserModel, String> name;
 
-    public StudentsController()
-    {
+    @FXML
+    private TableColumn<UserModel, String> sex;
 
+    @FXML
+    private TableColumn<UserModel, String> birthday;
+
+    @FXML
+    private TableColumn<UserModel, String> institute;
+
+    @FXML
+    private TableColumn<UserModel, String> major;
+
+    @FXML
+    private TableColumn<UserModel, String> role;
+
+    public StudentsController() {
+        // 无需特殊初始化
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // 设置列的 CellValueFactory，用于从 UserModel 中映射数据到表格
+        studentId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        sex.setCellValueFactory(new PropertyValueFactory<>("sex"));
+        birthday.setCellValueFactory(new PropertyValueFactory<>("birthday"));
+        institute.setCellValueFactory(new PropertyValueFactory<>("institute"));
+        major.setCellValueFactory(new PropertyValueFactory<>("major"));
+        role.setCellValueFactory(new PropertyValueFactory<>("role"));
 
-        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
-        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
-        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
-        tbData.setItems(studentsModels);
+        // 加载数据到 TableView
+        loadStudentsData();
     }
 
-    private ObservableList<StudentsModel> studentsModels = FXCollections.observableArrayList(
-            new StudentsModel(1,"Amos", "Chepchieng"),
-            new StudentsModel(2,"Amos", "Mors"),
-            new StudentsModel(3,"Amos", "Chepchieng"),
-            new StudentsModel(4,"Amos", "Mors")
-    );
+    private void loadStudentsData() {
+        // 从 DataBase 获取所有用户并过滤角色为 "Student"
+        ObservableList<UserModel> studentsModels = FXCollections.observableArrayList(
+            DataBase.findUsersByRole("Student")
+        );
 
-
+        // 设置数据到 TableView
+        tbData.setItems(studentsModels);
+    }
 }

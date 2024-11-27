@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.UserInfoController">
+   <children>
+      <Pane layoutY="-2.0" prefHeight="134.0" prefWidth="950.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="-2.0">
+         <children>
+            <GridPane hgap="10.0" layoutY="-2.0" prefHeight="139.0" prefWidth="521.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="232.199951171875" minWidth="10.0" prefWidth="133.79998779296875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0000122070313" minWidth="10.0" prefWidth="376.0000122070313" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="115.80000305175781" minHeight="10.0" prefHeight="97.60000305175781" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="88.79999389648438" minHeight="10.0" prefHeight="32.799996948242196" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="41.59999694824218" minHeight="0.0" prefHeight="9.600021362304688" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <FontAwesomeIconView size="110px" fill="#ffffff" glyphName="USER" layoutX="302.0" layoutY="18.0" pickOnBounds="true" GridPane.halignment="RIGHT" GridPane.rowSpan="2" GridPane.valignment="CENTER">
+                  </FontAwesomeIconView>
+                  <Label prefWidth="148.0" text="用户" textFill="WHITE" GridPane.columnIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Microsoft YaHei Light" size="70.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="20.0" prefWidth="341.0" text="用户在教务系统上登记的基本信息以及成绩概要" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                     <font>
+                        <Font name="Microsoft YaHei" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <Pane layoutY="134.0" prefHeight="463.0" prefWidth="950.0">
+         <children>
+            <SplitPane dividerPositions="0.2272920203735144" layoutY="-6.0" prefHeight="481.0" prefWidth="944.0">
+              <items>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="姓名" textAlignment="RIGHT" textFill="#6a1b9a" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.38" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6A1B9A;" />
+                        <Label fx:id="userName" prefHeight="30.0" prefWidth="222.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="性别" textAlignment="RIGHT" textFill="DARKORANGE" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.49" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FF8C00;" GridPane.rowIndex="1" />
+                        <Label fx:id="userSex" prefHeight="30.0" prefWidth="226.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="生日" textAlignment="RIGHT" textFill="#039be5" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.53" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #039BE5;" GridPane.rowIndex="2" />
+                        <Label fx:id="userBirthday" prefHeight="30.0" prefWidth="230.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="学院" textAlignment="RIGHT" textFill="#e53935" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E53935;" GridPane.rowIndex="3" />
+                        <Label fx:id="userInstitue" prefHeight="30.0" prefWidth="224.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="专业" textAlignment="RIGHT" textFill="#43a047" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.59" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #43A047;" GridPane.rowIndex="4" />
+                        <Label fx:id="userMajor" prefHeight="30.0" prefWidth="222.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefHeight="25.0" prefWidth="42.0" style="-fx-alignment: center;" text="身份 " textAlignment="RIGHT" textFill="#8d6e63" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Microsoft YaHei Bold" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="3.0" top="3.0" />
+                           </padding>
+                        </Label>
+                        <Pane opacity="0.64" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8D6E63;" GridPane.rowIndex="5" />
+                        <Label fx:id="userRole" prefHeight="30.0" prefWidth="218.0" style="-fx-alignment: center;" text="Label" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane hgap="5.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.5999755859375" minWidth="10.0" prefWidth="442.3999755859375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.4000244140625" minWidth="10.0" prefWidth="216.80002441406253" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="248.79999389648438" minHeight="10.0" prefHeight="159.9999755859375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="309.6" minHeight="10.0" prefHeight="224.0000244140625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BarChart fx:id="creditBarChart" title="各学期所得学分">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="gradePieChart" title="成绩分布" GridPane.columnIndex="1" />
+                        <LineChart fx:id="gradeLineChartData" prefHeight="214.0" prefWidth="622.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                  </GridPane>
+              </items>
+            </SplitPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -5,7 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -13,41 +16,44 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+import home.controllers.Authenticator;
+
+public class LoginPageController implements Initializable {
 
     @FXML
-    private Button btnDashboard;
-
+    private Button btnLogin;
+    
     @FXML
-    private Button btnStudents;
-
+    private TextField textUserName;
+    
     @FXML
-    private Button btn_Timetable;
-
+    private PasswordField textPassword;
+    	
     @FXML
-    private Button btnSettings;
-
-    @FXML
-    private Button btnUpdate;
-
-    @FXML
-    private Button btnClasses;
-
+    private HBox pageContainer;
+    
     //my bad - the freaking mouse event
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
-        if (mouseEvent.getSource() == btnDashboard) {
-            loadStage("/fxml/Dashboard.fxml");
-        } else if (mouseEvent.getSource() == btnStudents) {
-            loadStage("/fxml/Students.fxml");
-        } else if (mouseEvent.getSource() == btn_Timetable) {
-            loadStage("/fxml/Timetable.fxml");
-        }
+    	
+        if (mouseEvent.getSource() == btnLogin) {
+            String username = textUserName.getText();
+            String password = textPassword.getText();
+            if (Authenticator.login(username, password)) {
+            	System.out.println("Login Successfully");
+            	Stage stage = (Stage) btnLogin.getScene().getWindow();
+            	stage.close();
+            	loadStage("/fxml/Home.fxml");
+            	
+            	
+            } else {
+            	System.out.println("Login Failed!");
+            }
+        } 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     private void loadStage(String fxml) {
@@ -62,4 +68,9 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
+    
+//    private Stage getStage() {
+//    	return currStage;
+//    }
+//    private Stage currStage; 
 }

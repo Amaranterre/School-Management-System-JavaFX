@@ -1,6 +1,6 @@
 package home.controllers;
 
-import home.model.StudentsModel;
+import home.model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,15 +16,15 @@ import java.util.ResourceBundle;
 public class DashboardController implements Initializable {
 
     @FXML
-    private TableView<StudentsModel> tbData;
+    private TableView<UserModel> tbData;
     @FXML
-    public TableColumn<StudentsModel, Integer> studentId;
+    public TableColumn<UserModel, Integer> studentId;
 
     @FXML
-    public TableColumn<StudentsModel, String> firstName;
+    public TableColumn<UserModel, String> firstName;
 
     @FXML
-    public TableColumn<StudentsModel, String> lastName;
+    public TableColumn<UserModel, String> lastName;
 
     @FXML
     private PieChart pieChart;
@@ -50,20 +50,20 @@ public class DashboardController implements Initializable {
     }
 
 
-    private ObservableList<StudentsModel> studentsModels = FXCollections.observableArrayList(
-            new StudentsModel(1,"Amos", "Chepchieng"),
-            new StudentsModel(2,"Amos", "Mors"),
-            new StudentsModel(3,"Amos", "Chepchieng"),
-            new StudentsModel(4,"Amos", "Mors")
+    private ObservableList<UserModel> studentsModels = FXCollections.observableArrayList(
+//            new StudentsModel(1,"Amos", "Chepchieng"),
+//            new StudentsModel(2,"Amos", "Mors"),
+//            new StudentsModel(3,"Amos", "Chepchieng"),
+//            new StudentsModel(4,"Amos", "Mors")
     );
 
 
     private void loadStudents()
     {
-        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
-        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
-        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
-        tbData.setItems(studentsModels);
+//        studentId.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
+//        firstName.setCellValueFactory(new PropertyValueFactory<>("FirstName"));
+//        lastName.setCellValueFactory(new PropertyValueFactory<>("LastName"));
+//        tbData.setItems(studentsModels);
     }
 
 }
